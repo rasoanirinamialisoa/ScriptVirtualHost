@@ -48,3 +48,45 @@ Une fois dans le repértoire templates, on utilisez un éditeur de texte pour cr
 > 
 > nano back.hei.school.conf
 
+# Configuration des fichier.conf
+On configure chaque contenu de template en adaptant avec le nom de domaine dans le fichier inventory.ini
+
+www.hei.school
+-  <VirtualHost *:80>
+
+>     ServerName www.hei.school
+
+>     ServerAlias hei.school
+
+>     DocumentRoot /var/www/www.hei.school
+
+>  </VirtualHost>
+
+api.hei.school
+> <VirtualHost *:80>
+
+>     ServerName api.hei.school
+
+>     ServerAlias hei.school
+
+>     DocumentRoot /var/www/www.api.school
+
+>  </VirtualHost>
+
+front.hei.school
+> <VirtualHost *:80>
+> 
+>     ServerName front.hei.school
+>     
+>     ServerAlias hei.school
+>     
+>     DocumentRoot /var/www/front.api.school
+>     
+>  </VirtualHost>
+
+back.hei.school
+> <VirtualHost *:80>
+>     ServerName back.hei.school
+>     ServerAlias hei.school
+>     DocumentRoot /var/www/back.api.school
+>  </VirtualHost>
