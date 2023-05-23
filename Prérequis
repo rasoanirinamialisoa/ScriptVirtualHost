@@ -1,5 +1,5 @@
 ## Prérequis
-Apache2: Il faut installer Apache2 sur les hôtes.
+Apache2: Il faut installer Apache2.
 - apt install apache2
 Ansible : Il faut installer Ansible
 - apt install ansible
