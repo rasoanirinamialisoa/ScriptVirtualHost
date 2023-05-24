@@ -49,32 +49,14 @@ Une fois dans le repértoire templates, on utilisez un éditeur de texte pour cr
 > 
 
 # Configuration des fichier.conf
-On configure chaque contenu de template en adaptant avec le nom de domaine dans le fichier inventory.ini
+On configure chaque contenu de template en adaptant avec le nom de domaine dans le fichier inventory.ini en exécutant le éditeur de texte ci-dessus
 
-> nano www.hei.school
-- <VirtualHost *:80>
-- ServerName www.hei.school
- - ServerAlias hei.school
- - DocumentRoot /var/www/www.hei.school
- - </VirtualHost>
+# Création d'un fichier de tâches .yml 
+Ce fichier de tâches copie le fichier de configuration Apache2 
+spécifique à chaque hôte virtuel, 
+crée les répertoires 
+documentRoot et active les hôtes virtuels.
+Il redémarre également le service Apache2 pour appliquer les changements.
 
-> nano api.hei.school
-- <VirtualHost *:80>
-- ServerName api.hei.school
- - ServerAlias hei.school
- - DocumentRoot /var/www/api.hei.school
- - </VirtualHost>
- - 
-> nano front.hei.school
-- <VirtualHost *:80>
-- ServerName front.hei.school
- - ServerAlias hei.school
- - DocumentRoot /var/www/front.hei.school
- - </VirtualHost>
+> nano tâches_hotes.yml (fichier tâches_hôtes.yml)
 
-> nano back.hei.school
-- <VirtualHost *:80>
-- ServerName back.hei.school
- - ServerAlias hei.school
- - DocumentRoot /var/www/back.hei.school
- - </VirtualHost>
