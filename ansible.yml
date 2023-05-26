@@ -1,0 +1,77 @@
+---
+- hosts: virtual_hosts
+  become: true
+  tasks:
+    - name: Copy Apache2 configuration file - www.hei.school
+      template:
+        src: templates/www.hei.school.conf
+        dest: /etc/apache2/sites-available/www.hei.school.conf
+      notify: Enable virtual host - www.hei.school
+
+    - name: Create DocumentRoot directory - www.hei.school
+      file:
+        path: /var/www/www.hei.school
+        state: directory
+
+    - name: Enable virtual host - www.hei.school
+      command: a2ensite www.hei.school.conf
+      args:
+        chdir: /etc/apache2/sites-available/
+      notify: Restart Apache2
+
+    - name: Copy Apache2 configuration file - api.hei.school
+      template:
+        src: templates/api.hei.school.conf
+        dest: /etc/apache2/sites-available/api.hei.school.conf
+      notify: Enable virtual host - api.hei.school
+
+    - name: Create DocumentRoot directory - api.hei.school
+      file:
+        path: /var/www/api.hei.school
+        state: directory
+
+    - name: Enable virtual host - api.hei.school
+      command: a2ensite api.hei.school.conf
+      args:
+        chdir: /etc/apache2/sites-available/
+      notify: Restart Apache2
+
+    - name: Copy Apache2 configuration file - front.hei.school
+      template:
+        src: templates/front.hei.school.conf
+        dest: /etc/apache2/sites-available/front.hei.school.conf
+      notify: Enable virtual host - front.hei.school
+
+    - name: Create DocumentRoot directory - front.hei.school
+      file:
+        path: /var/www/front.hei.school
+        state: directory
+
+    - name: Enable virtual host - front.hei.school
+      command: a2ensite front.hei.school.conf
+      args:
+        chdir: /etc/apache2/sites-available/
+      notify: Restart Apache2
+
+    - name: Copy Apache2 configuration file - back.hei.school
+      template:
+        src: templates/back.hei.school.conf
+        dest: /etc/apache2/sites-available/back.hei.school.conf
+      notify: Enable virtual host - back.hei.school
+
+    - name: Create DocumentRoot directory - back.hei.school
+      file:
+        path: /var/www/back.hei.school
+        state: directory
+
+    - name: Enable virtual host - back.hei.school
+      command: a2ensite back.hei.school.conf
+      args:
+        chdir: /etc/apache2/sites-available/
+      notify: Restart Apache2
+
+  handlers:
+    - name: Restart Apache2
+      service:
+        name: apache2
+        state: restarted
