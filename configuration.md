@@ -1,4 +1,4 @@
-# Configuration et mise en place des hôtes virtueles
+# Configuration et mise en place des hôtes virtuels
 Il faut commencer à créer un répértoire pour le projet réaliser avec Ansible et puis on y accède.
 > mkdir myproject_ansible
 > 
