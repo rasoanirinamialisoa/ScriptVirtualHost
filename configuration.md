@@ -18,15 +18,17 @@ On utilise nano pour ajouter le contenu :
 > nano  inventory.ini
 
 contenu :
-> [virtual_host]
+>[virtual_hosts]
+>
+> www.hei.school ansible_host=127.0.1.2
 > 
-> www.hei.school
+> api.hei.school ansible_host=127.0.1.3
 > 
-> api.hei.school
+> front.hei.school ansible_host=127.0.1.4
 > 
-> front.hei.school
+> back.hei.school ansible_hosts=127.0.1.5
 > 
-> back.hei.school
+
 
 # Création d'un fichier d'inventaire Apache2 pour chaque hôte virtuel.
 Tout d'abord, il faut vérifier où se trouve le dossier et le fichier de configuration
@@ -58,5 +60,5 @@ crée les répertoires
 documentRoot et active les hôtes virtuels.
 Il redémarre également le service Apache2 pour appliquer les changements.
 
-> nano tâches_hotes.yml (fichier tâches_hôtes.yml)
+> nano configurer_hotes.yml (fichier tâches_hôtes.yml)
 
