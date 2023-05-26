@@ -98,3 +98,6 @@ vers le répertoire /etc/apache2/sites-enabled/.
 # Redémarrer Apache2 
 Après avoir créé le lien symbolique, on redémarre Apache pour appliquer les modifications
 - sudo service apache2 restart
+
+# Exécution de commande playbook
+- ansible-playbook -i inventory.ini configurer_hotes.yml
