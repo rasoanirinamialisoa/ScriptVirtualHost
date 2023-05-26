@@ -1,0 +1,43 @@
+<VirtualHost *:80>
+    ServerName www.hei.school
+    ServerAlias hei.school
+    DocumentRoot '/var/www/html'
+    <Directory /var/www/www.hei.school>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName api.hei.school
+    ServerAlias hei.school
+    DocumentRoot '/var/www/html'
+    <Directory /var/www/api.hei.school>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName front.hei.school
+     ServerAlias hei.school
+    DocumentRoot '/var/www/html'
+    <Directory /var/www/front.hei.school>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName back.hei.school
+     ServerAlias hei.school
+    DocumentRoot '/var/www/html'
+    <Directory /var/www/back.hei.school>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
