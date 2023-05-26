@@ -58,5 +58,10 @@ crée les répertoires
 documentRoot et active les hôtes virtuels.
 Il redémarre également le service Apache2 pour appliquer les changements.
 
-> nano tâches_hotes.yml (fichier tâches_hôtes.yml)
+> nano configurer_hotes.yml (fichie configurer_hotes.yml)
+
+# Execution du playbook d'ansible 
+Au final, on peut executer le playbook
+> ansible-playbook -i inventory.ini configurer_hotes.yml
+
 
