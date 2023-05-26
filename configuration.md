@@ -101,3 +101,9 @@ Après avoir créé le lien symbolique, on redémarre Apache pour appliquer les 
 
 # Exécution de commande playbook
 - ansible-playbook -i inventory.ini configurer_hotes.yml
+
+# Verification
+- On vérifie si les fichiers de configuration Apache ont été créés avec succès en accédant au répertoire /etc/apache2/sites-available/
+- ls /var/www/ : permet d'assurer que les répertoires www.hei.school/, api.hei.school/, front.hei.school/ et back.hei.school/ ont été créés.
+- On vérifie les fichiers HTML s'ils ont été créés avec succès en accédant à chaque hôte via un navigateur web ou en utilisant la commande curl 
+- curl http://www.hei.school, curl http://api.hei.school, curl http://front.hei.school, curl http://back.hei.school
