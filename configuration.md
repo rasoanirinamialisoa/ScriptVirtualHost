@@ -23,6 +23,7 @@ afin de modifier mon hôte virtuel.
 
 # Changement de contenu du template
 On doit modifier les fichiers de configuration pour chaque hôte virtuel en utilisant un éditeur de texte Nano
+
 > sudo nano /etc/apache2/sites-available/www.hei.school.conf
 > 
 > sudo nano /etc/apache2/sites-available/api.hei.school.conf
@@ -34,6 +35,7 @@ On doit modifier les fichiers de configuration pour chaque hôte virtuel en util
 
 # Configuration de DNS locale 
 On doit configurer le DNS locale sur mon propre machine avec celui de nom de domaine que je vais créer.
+NB : les adresses IP ont été choisi selon l'adresse ip de mon machine virtuelle.
 > 127.0.0.1       localhost
 >
 > 127.0.1.1       lisa-virtual-machine
@@ -56,7 +58,7 @@ Exemple : inventory.ini
 En exécutant cette commande, on crée un nouveau fichier vide avec le nom spécifié, dans ce cas inventory.ini, prêt à être édité.
 
 On utilise nano pour ajouter le contenu du fichier inventory.ini qui doit être correctement configuré avec les adresses IP et les noms d'hôte cibles. 
-NB : les adresses IP ont été choisi selon l'adresse ip de mon machine virtuelle 
+
 
 > nano  inventory.ini
 
@@ -101,5 +103,5 @@ crée les répertoires
 documentRoot et active les hôtes virtuels.
 Il redémarre également le service Apache2 pour appliquer les changements.
 
-> nano tâches_hotes.yml (fichier tâches_hôtes.yml)
+> nano ansible.yml (fichier ansible.yml)
 
