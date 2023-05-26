@@ -4,8 +4,9 @@
   tasks:
     - name: Copy Apache2 configuration file - www.hei.school
       template:
-        src: templates/www.hei.school.conf
+        src: www.hei.school.conf
         dest: /etc/apache2/sites-available/www.hei.school.conf
+         remote_src: true
       notify: Enable virtual host - www.hei.school
 
     - name: Create DocumentRoot directory - www.hei.school
@@ -21,8 +22,9 @@
 
     - name: Copy Apache2 configuration file - api.hei.school
       template:
-        src: templates/api.hei.school.conf
+        src: api.hei.school.conf
         dest: /etc/apache2/sites-available/api.hei.school.conf
+         remote_src: true
       notify: Enable virtual host - api.hei.school
 
     - name: Create DocumentRoot directory - api.hei.school
@@ -38,8 +40,9 @@
 
     - name: Copy Apache2 configuration file - front.hei.school
       template:
-        src: templates/front.hei.school.conf
+        src: front.hei.school.conf
         dest: /etc/apache2/sites-available/front.hei.school.conf
+         remote_src: true
       notify: Enable virtual host - front.hei.school
 
     - name: Create DocumentRoot directory - front.hei.school
@@ -55,8 +58,9 @@
 
     - name: Copy Apache2 configuration file - back.hei.school
       template:
-        src: templates/back.hei.school.conf
+        src: back.hei.school.conf
         dest: /etc/apache2/sites-available/back.hei.school.conf
+         remote_src: true
       notify: Enable virtual host - back.hei.school
 
     - name: Create DocumentRoot directory - back.hei.school
