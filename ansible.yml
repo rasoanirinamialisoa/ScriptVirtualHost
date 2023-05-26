@@ -73,6 +73,30 @@
       args:
         chdir: /etc/apache2/sites-available/
       notify: Restart Apache2
+  
+    - name: Create HTML file for www.hei.school
+      copy:
+      content: "<html><body><h1>Welcome to www.hei.school!</h1></body></html>"
+        dest: "/var/www/www.hei.school/index.html"
+      notify: Restart Apache2
+
+    - name: Create HTML file for api.hei.school
+      copy:
+      content: "<html><body><h1>Welcome to api.hei.school!</h1></body></html>"
+        dest: "/var/www/api.hei.school/index.html"
+      notify: Restart Apache2
+
+    - name: Create HTML file for front.hei.school
+      copy:
+      content: "<html><body><h1>Welcome to front.hei.school!</h1></body></html>"
+        dest: "/var/www/front.hei.school/index.html"
+      notify: Restart Apache2
+
+    - name: Create HTML file for back.hei.school
+      copy:
+      content: "<html><body><h1>Welcome to back.hei.school!</h1></body></html>"
+        dest: "/var/www/back.hei.school/index.html"
+      notify: Restart Apache2
 
   handlers:
     - name: Restart Apache2
